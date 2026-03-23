@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Улан-Удэ — подробное описание</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav id="navigation" class="nav">
+        <div class="nav-container">
+            <button class="logo-btn" onclick="window.location.href='index.html'">
+                <div class="logo-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <span class="logo-text">Khan</span>
+            </button>
+
+            <div class="nav-links">
+                <a class="nav-link" href="index.html">Главная</a>
+                <a class="nav-link" href="about.html">Обо мне</a>
+                <a class="nav-link" href="projects.html">Проекты</a>
+                <a class="nav-link" href="contacts.html">Контакты</a>
+            </div>
+
+            <button class="cta-btn" onclick="window.location.href='contacts.html'">Связаться</button>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <div class="mobile-menu" id="mobileMenu">
+            <a class="nav-link" href="index.html">Главная</a>
+            <a class="nav-link" href="about.html">Обо мне</a>
+            <a class="nav-link" href="projects.html">Проекты</a>
+            <a class="nav-link" href="contacts.html">Контакты</a>
+            <button class="cta-btn" onclick="window.location.href='contacts.html'">Связаться</button>
+        </div>
+    </nav>
+
+    <main style="padding-top: 80px;">
+        <section class="project-detail">
+            <div class="container">
+                <article class="project-detail-card">
+                    <div class="project-detail-top">
+                        <div class="project-detail-info">
+                            <div class="project-header">
+                                <h1 class="project-detail-title">Улан-Удэ</h1>
+                                <span class="project-date">2025</span>
+                            </div>
+                            <p class="project-detail-text">
+                                Улан-Удэ — концепт мобильного приложения, посвящённого культурной и туристической
+                                инфраструктуре города. Пользователь может находить мероприятия, интересные места,
+                                маршруты и сервисы, оформленные в единой визуальной системе с опорой на локальную
+                                идентичность и современный UI.
+                            </p>
+                            <p class="project-detail-text">
+                                В проекте проработаны дизайн-система, навигация, сценарии поиска и фильтрации объектов.
+                                Особое внимание уделено типографике, работе с картой и иконографике, чтобы сделать
+                                взаимодействие с городским пространством интуитивным для жителей и туристов.
+                            </p>
+                            <div class="project-detail-tech">
+                                <span>Figma</span>
+                                <span>Adobe Illustrator</span>
+                                <span>Adobe Photoshop</span>
+                            </div>
+                        </div>
+                        <div class="project-detail-image">
+                            <img src="images/ulanude.png" alt="Улан-Удэ">
+                        </div>
+                    </div>
+                    <div class="project-detail-actions">
+                        <button type="button" class="project-link secondary project-detail-back" onclick="window.history.back()">
+                            ← Назад
+                        </button>
+                        <button class="project-link primary" data-pdf-url="documents/ulanUde.pdf" data-project-title="Улан-Удэ">
+                            <i class="fas fa-file-pdf"></i>
+                            Смотреть PDF
+                        </button>
+                        <a href="https://github.com/AbiybillaevKhanbolot" class="project-link secondary" target="_blank" rel="noopener">
+                            <i class="fab fa-github"></i>
+                            Code
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-left">
+                        <button class="logo-btn" onclick="window.location.href='index.html'">
+                            <div class="logo-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <span class="logo-text">Khan</span>
+                        </button>
+                        <p class="copyright">© 2026 Все права защищены.</p>
+                    </div>
+
+                    <div class="footer-links">
+                        <a class="footer-link" href="index.html">Главная</a>
+                        <a class="footer-link" href="about.html">Обо мне</a>
+                        <a class="footer-link" href="projects.html">Проекты</a>
+                        <a class="footer-link" href="contacts.html">Контакты</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="toast" class="toast"></div>
+    <div class="noise-overlay"></div>
+
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+

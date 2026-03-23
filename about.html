@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Обо мне - DevPortfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Навигация строго как на index — перекрываем Tailwind */
+        #navigation,
+        #navigation * {
+            box-sizing: border-box !important;
+        }
+        #navigation,
+        #navigation .nav-container,
+        #navigation .nav-links,
+        #navigation .nav-link,
+        #navigation .cta-btn,
+        #navigation .logo-btn,
+        #navigation .logo-text {
+            font-family: 'Segoe UI', system-ui, sans-serif !important;
+        }
+        @media (min-width: 769px) {
+            #navigation .nav-links {
+                display: flex !important;
+                gap: 32px !important;
+            }
+        }
+        #navigation .nav-link {
+            font-size: 16px !important;
+            font-weight: 500 !important;
+            line-height: 1.5 !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            background: none !important;
+            border: none !important;
+            color: #ffffff !important;
+            text-decoration: none !important;
+            cursor: pointer !important;
+            display: inline-block !important;
+            letter-spacing: normal !important;
+        }
+        #navigation .nav-link:hover {
+            color: #ffffff !important;
+        }
+        /* Убираем любой индикатор над пунктом (чтобы все 4 кнопки выглядели одинаково) */
+        #navigation .nav-link::before {
+            display: none !important;
+            content: none !important;
+        }
+        #navigation .cta-btn {
+            font-size: 16px !important;
+            padding: 10px 24px !important;
+            border-radius: 8px !important;
+            font-weight: 600 !important;
+            line-height: 1.5 !important;
+        }
+        #navigation .logo-btn {
+            font-size: 1.25rem !important;
+            font-weight: 700 !important;
+        }
+        #navigation .nav-container {
+            height: 80px !important;
+        }
+        #navigation .mobile-menu .nav-link {
+            font-size: 16px !important;
+            font-weight: 500 !important;
+        }
+    </style>
+</head>
+<body class="about-page">
+    <nav id="navigation" class="nav">
+        <div class="nav-container">
+            <button class="logo-btn" onclick="window.location.href='index.html'">
+                <div class="logo-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <span class="logo-text">Khan</span>
+            </button>
+
+            <div class="nav-links">
+                <button type="button" class="nav-link" onclick="window.location.href='index.html'">Главная</button>
+                <a class="nav-link" href="about.html">Обо мне</a>
+                <button type="button" class="nav-link" onclick="window.location.href='projects.html'">Проекты</button>
+                <button type="button" class="nav-link" onclick="window.location.href='contacts.html'">Контакты</button>
+            </div>
+
+            <button type="button" class="cta-btn" onclick="window.location.href='contacts.html'">Связаться</button>
+
+            <button type="button" class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <div class="mobile-menu" id="mobileMenu">
+            <button type="button" class="nav-link" onclick="window.location.href='index.html'">Главная</button>
+            <a class="nav-link" href="about.html">Обо мне</a>
+            <button type="button" class="nav-link" onclick="window.location.href='projects.html'">Проекты</button>
+            <button type="button" class="nav-link" onclick="window.location.href='contacts.html'">Контакты</button>
+            <button type="button" class="cta-btn" onclick="window.location.href='contacts.html'">Связаться</button>
+        </div>
+    </nav>
+
+    <main style="padding-top: 80px;">
+        <!-- Секция "Обо мне" (фото + информация) -->
+        <section id="about" class="about-intro">
+            <div class="container">
+                <div class="about-intro-grid">
+                    <div class="about-intro-info">
+                        <h2 class="about-intro-name">Абийбиллаев&nbsp;Ханболот Бактиярович</h2>
+                        <p class="about-intro-role">Strong Junior DevOps</p>
+                        <p class="about-intro-age">21 год</p>
+                        <div class="about-intro-education">
+                            <p>Высшее, Бакалавр</p>
+                            <p>Санкт-Петербургский Государственный Университет Промышленных Технологий и Дизайна</p>
+                            <p>Институт — Информационных технологий и автоматизации</p>
+                            <p>Направление — Прикладная информатика в дизайне</p>
+                            <p>2022–2026, Очная форма обучения</p>
+                        </div>
+                    </div>
+                    <div class="about-intro-photo-wrap">
+                        <div class="about-intro-photo-card">
+                            <img src="images/me.JPG" alt="Ханболот Абийбиллаев" class="about-intro-photo">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Секция "Опыт" -->
+        <section id="experience" class="experience">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Опыт</h2>
+                    <div class="divider"></div>
+                    <p>Практический опыт работы над проектами в различных областях</p>
+                </div>
+
+                <div class="experience-container">
+                    <div class="experience-card-main fade-in-up">
+                        <div class="experience-items">
+                            <div class="experience-item">
+                                <div class="experience-content">
+                                    <div class="experience-header">
+                                        <div>
+                                            <h3 class="experience-title">Опыт в сфере Информационных систем и технологий</h3>
+                                            <p class="experience-subtitle">Курсовая работа</p>
+                                        </div>
+                                        <div class="experience-header-right">
+                                            <span class="experience-year">2024</span>
+                                            <button class="experience-toggle" type="button" aria-expanded="false">
+                                                +
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="experience-body">
+                                        <p class="experience-description">
+                                            Разработал информационную систему для ресторана «Жетиген», которая автоматизировала процессы организации мероприятий — от приёма заявок до финансового учёта. Внедрение системы повысило оперативность обработки заказов на 40%, сократило количество ошибок при бронировании и планировании ресурсов на 35%, а также улучшило взаимодействие между отделами, что привело к росту удовлетворённости клиентов и увеличению повторных заказов.
+                                        </p>
+                                        <p class="experience-results">Результаты предоставлены в секции проектов</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="experience-item">
+                                <div class="experience-content">
+                                    <div class="experience-header">
+                                        <div>
+                                            <h3 class="experience-title">Опыт в веб-разработке и DevOps</h3>
+                                            <p class="experience-subtitle">Дипломная работа</p>
+                                        </div>
+                                        <div class="experience-header-right">
+                                            <span class="experience-year">2026</span>
+                                            <button class="experience-toggle" type="button" aria-expanded="false">
+                                                +
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="experience-body">
+                                        <p class="experience-description">
+                                            Спроектировал и разработал веб-платформу для бронирования загородного жилья с учётом специфики малых отелей и коттеджей. Реализовал полный цикл: от анализа рынка и проектирования UX/UI до создания клиент-серверной архитектуры с использованием современного стека (Next.js, Node.js, PostgreSQL, Firebase) и внедрением уникальной геймифицированной программы лояльности «Виртуальный сад». Настроил DevOps-процессы (CI/CD через GitHub Actions, автоматический деплой на Vercel, контейнеризацию с Docker), что сократило время выхода обновлений на 70% и повысило стабильность работы платформы. Проект нацелен на увеличение прямых бронирований для владельцев и формирование лояльного сообщества путешественников.
+                                        </p>
+                                        <p class="experience-results">Результаты предоставлены в секции проектов</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="experience-item">
+                                <div class="experience-content">
+                                    <div class="experience-header">
+                                        <div>
+                                            <h3 class="experience-title">Дополнительный опыт</h3>
+                                            <p class="experience-subtitle">В разработке</p>
+                                        </div>
+                                        <div class="experience-header-right">
+                                            <span class="experience-year"> </span>
+                                            <button class="experience-toggle" type="button" aria-expanded="false">
+                                                +
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="experience-body">
+                                        <p class="experience-description">
+                                            Постоянно совершенствую свои навыки в DevOps, изучаю новые технологии и практики автоматизации инфраструктуры. Работаю над личными проектами и участвую в коммерческих задачах.
+                                        </p>
+                                        <p class="experience-results">Результаты предоставлены в секции проектов</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-left">
+                        <button class="logo-btn" onclick="window.location.href='index.html'">
+                            <div class="logo-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <span class="logo-text">Khan</span>
+                        </button>
+                        <p class="copyright">© 2026 Все права защищены.</p>
+                    </div>
+
+                    <div class="footer-links">
+                        <a class="footer-link" href="index.html">Главная</a>
+                        <a class="footer-link" href="about.html">Обо мне</a>
+                        <a class="footer-link" href="projects.html">Проекты</a>
+                        <a class="footer-link" href="contacts.html">Контакты</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="toast" class="toast"></div>
+    <div class="noise-overlay"></div>
+
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

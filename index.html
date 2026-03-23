@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevPortfolio - DevOps инженер</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Навигация -->
+    <nav id="navigation" class="nav">
+        <div class="nav-container">
+            <button class="logo-btn" id="homeBtn">
+                <div class="logo-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <span class="logo-text">Khan</span>
+            </button>
+
+            <div class="nav-links">
+                <button class="nav-link" data-section="hero">Главная</button>
+                <a class="nav-link" href="about.html">Обо мне</a>
+                <a class="nav-link" href="projects.html">Проекты</a>
+                <a class="nav-link" href="contacts.html">Контакты</a>
+            </div>
+
+            <a class="cta-btn" href="contacts.html">Связаться</a>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Мобильное меню -->
+        <div class="mobile-menu" id="mobileMenu">
+            <button class="nav-link" data-section="hero">Главная</button>
+            <a class="nav-link" href="about.html">Обо мне</a>
+            <a class="nav-link" href="projects.html">Проекты</a>
+            <a class="nav-link" href="contacts.html">Контакты</a>
+            <a class="cta-btn" href="contacts.html">Связаться</a>
+        </div>
+    </nav>
+
+    <!-- Герой секция -->
+    <section id="hero" class="hero">
+        <div class="hero-background">
+            <div class="gradient-bg"></div>
+            <div class="radial-gradient"></div>
+            <div class="particles" id="particles"></div>
+            <div id="heroCanvas" class="hero-canvas"></div>
+        </div>
+
+        <div class="hero-content">
+            <div class="availability-badge">
+                <i class="fas fa-code"></i>
+                <span>Абийбиллаев Ханболот</span>
+            </div>
+
+            <h1 class="hero-title">
+                Создаю цифровые
+                <br>
+                <span class="gradient-text">Решения</span>
+            </h1>
+
+            <p class="hero-description">
+                DevOps инженер. Специализируюсь на автоматизации инфраструктуры, CI/CD пайплайнах
+                и обеспечении надежности и масштабируемости облачных решений.
+            </p>
+
+            <div class="hero-buttons">
+                <button class="btn-primary" data-section="projects">
+                    Смотреть работы
+                </button>
+                <a href="contacts.html" class="btn-secondary">Обсудить проект</a>
+            </div>
+
+            <!-- <div class="scroll-indicator">
+                <div class="scroll-arrow">
+                    <div class="scroll-dot"></div>
+                </div>
+            </div> -->
+        </div>
+    </section>
+
+    <!-- Секция "Навыки и Технологии" -->
+    <section id="tech-skills" class="tech-skills">
+        <div class="container">
+            <div class="tech-skills-title">
+                <h2>Навыки и Технологии</h2>
+            </div>
+        </div>
+        <div class="tech-marquee-wrapper">
+            <div class="tech-marquee">
+                <div class="tech-marquee-content">
+                    <span class="tech-item">Linux</span>
+                    <span class="tech-item">PostgreSQL</span>
+                    <span class="tech-item">Docker</span>
+                    <span class="tech-item">Kubernetes</span>
+                    <span class="tech-item">Terraform</span>
+                    <span class="tech-item">Ansible</span>
+                    <span class="tech-item">AWS</span>
+                    <span class="tech-item">Azure</span>
+                    <span class="tech-item">GCP</span>
+                    <span class="tech-item">CI/CD</span>
+                    <span class="tech-item">GitLab</span>
+                    <span class="tech-item">Jenkins</span>
+                    <span class="tech-item">GitHub Actions</span>
+                    <span class="tech-item">Bash</span>
+                    <span class="tech-item">Python</span>
+                    <span class="tech-item">Prometheus</span>
+                    <span class="tech-item">Grafana</span>
+                    <span class="tech-item">Nginx</span>
+                    <span class="tech-item">React</span>
+                    <span class="tech-item">Next.js</span>
+                    <span class="tech-item">Node.js</span>
+                    <span class="tech-item">TypeScript</span>
+                    <span class="tech-item">JavaScript</span>
+                    <span class="tech-item">MongoDB</span>
+                    <span class="tech-item">MySQL</span>
+                    <span class="tech-item">Express</span>
+                    <span class="tech-item">Vue.js</span>
+                    <span class="tech-item">Angular</span>
+                    <span class="tech-item">Redis</span>
+                    <span class="tech-item">Elasticsearch</span>
+                    <span class="tech-item">Helm</span>
+                    <span class="tech-item">Istio</span>
+                </div>
+                <div class="tech-marquee-content" aria-hidden="true">
+                    <span class="tech-item">Linux</span>
+                    <span class="tech-item">PostgreSQL</span>
+                    <span class="tech-item">Docker</span>
+                    <span class="tech-item">Kubernetes</span>
+                    <span class="tech-item">Terraform</span>
+                    <span class="tech-item">Ansible</span>
+                    <span class="tech-item">AWS</span>
+                    <span class="tech-item">Azure</span>
+                    <span class="tech-item">GCP</span>
+                    <span class="tech-item">CI/CD</span>
+                    <span class="tech-item">GitLab</span>
+                    <span class="tech-item">Jenkins</span>
+                    <span class="tech-item">GitHub Actions</span>
+                    <span class="tech-item">Bash</span>
+                    <span class="tech-item">Python</span>
+                    <span class="tech-item">Prometheus</span>
+                    <span class="tech-item">Grafana</span>
+                    <span class="tech-item">Nginx</span>
+                    <span class="tech-item">React</span>
+                    <span class="tech-item">Next.js</span>
+                    <span class="tech-item">Node.js</span>
+                    <span class="tech-item">TypeScript</span>
+                    <span class="tech-item">JavaScript</span>
+                    <span class="tech-item">MongoDB</span>
+                    <span class="tech-item">MySQL</span>
+                    <span class="tech-item">Express</span>
+                    <span class="tech-item">Vue.js</span>
+                    <span class="tech-item">Angular</span>
+                    <span class="tech-item">Redis</span>
+                    <span class="tech-item">Elasticsearch</span>
+                    <span class="tech-item">Helm</span>
+                    <span class="tech-item">Istio</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция "Проекты" -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-header-top">
+                    <h2>Избранные проекты</h2>
+                    <a href="projects.html" class="projects-all-btn">Все</a>
+                </div>
+                <div class="divider"></div>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Проекты будут сгенерированы JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция "Сертификаты" -->
+    <section id="certificates" class="certificates certificates--compact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Сертификаты</h2>
+                <div class="divider"></div>
+                <p>Подтверждение пройденных курсов и освоенных профессиональных компетенций</p>
+            </div>
+
+            <div class="certificates-grid">
+                <!-- Сертификаты будут сгенерированы JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция "Навыки" -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <div class="section-header">
+                <h2>Навыки и экспертиза</h2>
+                <div class="divider"></div>
+                <p>Навыки DevOps инженера. Подтверждённый набор компетенций, верифицированных платформой Хабр Карьера</p>
+            </div>
+
+            <div class="skills-grid">
+                <!-- Навыки будут сгенерированы JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-left">
+                        <button class="logo-btn" id="footerHomeBtn">
+                            <div class="logo-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <span class="logo-text">Khan</span>
+                        </button>
+                        <p class="copyright">© 2026 Все права защищены.</p>
+                    </div>
+
+                    <div class="footer-links">
+                        <button class="footer-link" data-section="hero">Главная</button>
+                        <a class="footer-link" href="about.html">Обо мне</a>
+                        <a class="footer-link" href="projects.html">Проекты</a>
+                        <a class="footer-link" href="contacts.html">Контакты</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Уведомление -->
+    <div id="toast" class="toast"></div>
+
+    <!-- Наложение шума -->
+    <div class="noise-overlay"></div>
+
+    <!-- Модальное окно для PDF -->
+    <div id="pdfModal" class="pdf-modal">
+        <div class="pdf-modal-content">
+            <div class="pdf-modal-header">
+                <h3 id="pdfModalTitle">Просмотр документа</h3>
+                <button class="pdf-modal-close" id="pdfModalClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div id="pdfModalWarning" class="pdf-modal-warning" style="display: none;">
+                <i class="fas fa-exclamation-triangle"></i>
+                <span>Данный проект является коммерческим и защищен авторским правом. Материалы представлены исключительно в портфолио и не подлежат копированию или распространению.</span>
+            </div>
+            <div class="pdf-modal-body">
+                <iframe id="pdfViewer" src="" frameborder="0"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

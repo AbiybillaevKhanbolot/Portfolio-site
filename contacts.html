@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты - DevPortfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="contacts-page">
+    <nav id="navigation" class="nav">
+        <div class="nav-container">
+            <button class="logo-btn" onclick="window.location.href='index.html'">
+                <div class="logo-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <span class="logo-text">Khan</span>
+            </button>
+
+            <div class="nav-links">
+                <a class="nav-link" href="index.html">Главная</a>
+                <a class="nav-link" href="about.html">Обо мне</a>
+                <a class="nav-link" href="projects.html">Проекты</a>
+                <a class="nav-link" href="contacts.html">Контакты</a>
+            </div>
+
+            <button class="cta-btn" onclick="window.location.href='contacts.html'">Связаться</button>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <div class="mobile-menu" id="mobileMenu">
+            <a class="nav-link" href="index.html">Главная</a>
+            <a class="nav-link" href="about.html">Обо мне</a>
+            <a class="nav-link" href="projects.html">Проекты</a>
+            <a class="nav-link" href="contacts.html">Контакты</a>
+            <button class="cta-btn" onclick="window.location.href='contacts.html'">Связаться</button>
+        </div>
+    </nav>
+
+    <main style="padding-top: 80px;">
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Давайте работать вместе</h2>
+                    <div class="divider"></div>
+                    <p>Есть проект? Давайте автоматизируем и оптимизируем вашу инфраструктуру вместе</p>
+                </div>
+
+                <div class="contact-content">
+                    <div class="contact-form-container">
+                        <form id="contactForm" class="contact-form">
+                            <div class="form-group">
+                                <label for="name">Ваше имя</label>
+                                <input type="text" id="name" name="name" placeholder="Иван Иванов" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email адрес</label>
+                                <input type="email" id="email" name="email" placeholder="ivan@example.com" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Ваше сообщение</label>
+                                <textarea id="message" name="message" placeholder="Расскажите о вашем проекте..." rows="5" required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn-primary submit-btn">
+                                Отправить сообщение
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    </div>
+
+                    <div class="contact-info">
+                        <div class="social-links">
+                            <a href="https://github.com/AbiybillaevKhanbolot" class="social-link" target="_blank">
+                                <i class="fab fa-github"></i>
+                                GitHub
+                            </a>
+                            <a href="https://linkedin.com/in/ivanov-dev" class="social-link" target="_blank">
+                                <i class="fab fa-linkedin"></i>
+                                LinkedIn
+                            </a>
+                            <a href="https://t.me/khan_fs" class="social-link" target="_blank">
+                                <i class="fab fa-telegram"></i>
+                                Telegram
+                            </a>
+                            <a href="mailto:hanbolotabiybillaev01@gmail.com" class="social-link">
+                                <i class="fas fa-envelope"></i>
+                                Email
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-left">
+                        <button class="logo-btn" onclick="window.location.href='index.html'">
+                            <div class="logo-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <span class="logo-text">Khan</span>
+                        </button>
+                        <p class="copyright">© 2026 Все права защищены.</p>
+                    </div>
+
+                    <div class="footer-links">
+                        <a class="footer-link" href="index.html">Главная</a>
+                        <a class="footer-link" href="about.html">Обо мне</a>
+                        <a class="footer-link" href="projects.html">Проекты</a>
+                        <a class="footer-link" href="contacts.html">Контакты</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="toast" class="toast"></div>
+    <div class="noise-overlay"></div>
+
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
