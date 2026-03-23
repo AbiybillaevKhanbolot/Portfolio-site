@@ -852,45 +852,20 @@ function initContactForm() {
         submitBtn.disabled = true;
 
         try {
-            // Проверяем наличие конфигурации
-            if (typeof TELEGRAM_CONFIG === 'undefined') {
-                throw new Error('TELEGRAM_CONFIG не определен. Убедитесь, что config.js загружен.');
-            }
-            
-            if (!TELEGRAM_CONFIG.botToken || !TELEGRAM_CONFIG.chatId) {
-                throw new Error('Telegram конфигурация неполная. Проверьте config.js');
-            }
-
-            // Формируем сообщение для Telegram
-            const telegramMessage = `📧 <b>Новое сообщение с сайта</b>\n\n` +
-                `👤 <b>Имя:</b> ${escapeHtml(formData.name)}\n` +
-                `📮 <b>Email:</b> ${escapeHtml(formData.email)}\n` +
-                `💬 <b>Сообщение:</b>\n${escapeHtml(formData.message)}`;
-
-            console.log('Отправка сообщения в Telegram...');
-
-            // Отправляем в Telegram
-            const response = await fetch(`https://api.telegram.org/bot${TELEGRAM_CONFIG.botToken}/sendMessage`, {
+            // Отправляем на Vercel serverless endpoint (без config.js на клиенте)
+            const response = await fetch('/api/telegram', {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    chat_id: TELEGRAM_CONFIG.chatId,
-                    text: telegramMessage,
-                    parse_mode: 'HTML'
-                })
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData)
             });
 
-            const result = await response.json();
-            console.log('Ответ от Telegram API:', result);
+            const result = await response.json().catch(() => ({}));
 
             if (response.ok && result.ok) {
                 showToast('Сообщение успешно отправлено! Я свяжусь с вами в ближайшее время.', 'success');
                 contactForm.reset();
             } else {
-                const errorMsg = result.description || 'Ошибка отправки сообщения';
-                console.error('Ошибка Telegram API:', errorMsg);
+                const errorMsg = result.error || result.description || 'Ошибка отправки сообщения';
                 throw new Error(errorMsg);
             }
         } catch (error) {
