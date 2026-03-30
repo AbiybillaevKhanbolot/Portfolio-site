@@ -12,6 +12,17 @@ const projectsData = [
         gradient: "from-[#E85002] to-[#C10801]"
     },
     {
+        title: "Улан-Удэ",
+        description: "Мобильное приложение",
+        tech: ["Figma", "Adobe Illustrator", "Adobe Photoshop"],
+        date: "01.01.2025",
+        image: "images/ulanude.png",
+        liveUrl: "#",
+        pdfUrl: "documents/ulanUde.pdf",
+        codeUrl: "https://github.com/AbiybillaevKhanbolot",
+        gradient: "from-[#C10801] to-[#F16001]"
+    },
+    {
         title: "ИС мероприятия",
         description: "Разработал и внедрил ИС для ресторана «Жетиген», автоматизирующую организацию мероприятий.",
         tech: ["Access", "MySQL", "ERwin", "ERwin Data Modeller"],
@@ -113,7 +124,8 @@ const projectDetailPages = {
     "Real Estate Portal": "project-realestate.html",
     "ИС мероприятия": "project-is-meropriyatiya.html",
     "Улан-Удэ": "project-ulan-ude.html",
-    "We are sysadmins": "project-bilet-5.html"
+    "We are sysadmins": "project-bilet-5.html",
+    "Stick Hero": "project-stick-hero.html"
 };
 
 // Расширенные описания проектов для модального окна
@@ -125,7 +137,9 @@ const projectDetails = {
     "Сайт - портфолио": "Персональный сайт-портфолио для агента по бронированию авиабилетов. Содержит главную страницу с преимуществами, блок об экспертизе и опытe, а также контактную страницу для заявок на подбор и оформление перелётов.",
     "FocusPod": "FocusPod — веб-сервис для бронирования приватных помещений под работу и встречи. Пользователь видит доступные слоты в календаре, выбирает помещение и время, получает подтверждение бронирования без лишних согласований.",
     "ИС мероприятия": "Информационная система для ресторана «Жетиген», автоматизирующая процесс организации мероприятий: от приёма заявок до формирования отчетности. Упорядочивает бронирование, планирование и учет.",
-    "Silva": "Silva — платформа для бронирования загородного жилья с программой лояльности «Виртуальный сад». Ориентирована на владельцев малых отелей и коттеджей и помогает организовать онлайн-продажи и коммуникацию с клиентами."
+    "Silva": "Silva — платформа для бронирования загородного жилья с программой лояльности «Виртуальный сад». Ориентирована на владельцев малых отелей и коттеджей и помогает организовать онлайн-продажи и коммуникацию с клиентами.",
+    "Улан-Удэ": "Мобильное приложение и визуальная концепция для фестиваля бурятского танца в Улан-Удэ: проект «Ночь-Ёхора», айдентика и презентация в едином стиле.",
+    "Stick Hero": "Stick Hero — браузерная аркада: рост палки для перехода между платформами, пошаговая механика и отрисовка на Canvas без игровых фреймворков."
 };
 
 const certificatesData = [
@@ -506,40 +520,21 @@ function generateProjects() {
     let projectsToShow;
     
     if (isProjectsPage) {
-        // На странице projects показываем все проекты с заменой некоторых карточек
-        projectsToShow = projectsData.map(project => ({ ...project }));
-        
-        // Находим проекты для замены
-        const portfolioProject = projectsData.find(p => p.title === "Сайт - портфолио");
-        const focusPodProject = projectsData.find(p => p.title === "FocusPod");
-        const tumarProject = projectsData.find(p => p.title === "Tumar.Ai");
-        
-        // Заменяем "ИС мероприятия" на "Сайт - портфолио"
-        const isitIndex = projectsToShow.findIndex(p => p.title === "ИС мероприятия");
-        if (isitIndex !== -1 && portfolioProject) {
-            projectsToShow[isitIndex] = { ...portfolioProject };
-        }
-        
-        // Заменяем "Silva" на "FocusPod"
-        const silvaIndex = projectsToShow.findIndex(p => p.title === "Silva");
-        if (silvaIndex !== -1 && focusPodProject) {
-            projectsToShow[silvaIndex] = { ...focusPodProject };
-        }
-        
-        // Удаляем карточку "UI/UX"
-        projectsToShow = projectsToShow.filter(p => p.title !== "UI/UX");
-        
-        // Удаляем дубликаты (оставляем только первое вхождение)
-        const seen = new Set();
-        projectsToShow = projectsToShow.filter(project => {
-            if (seen.has(project.title)) {
-                return false;
+        // Все проекты из данных; «UI/UX» скрыт — на главной вместо него избранная карточка «Улан-Удэ»
+        projectsToShow = projectsData.map(project => ({ ...project })).filter(p => p.title !== "UI/UX");
+
+        // Те же превью, что в блоке «Избранные проекты» на главной (ноутбук / макет)
+        projectsToShow = projectsToShow.map(p => {
+            if (p.title === "ИС мероприятия") {
+                return { ...p, image: "images/isit.png" };
             }
-            seen.add(project.title);
-            return true;
+            if (p.title === "Silva") {
+                return { ...p, image: "images/diplom.png" };
+            }
+            return p;
         });
-        
-        // Первым идет Tumar.Ai
+
+        const tumarProject = projectsData.find(p => p.title === "Tumar.Ai");
         if (tumarProject) {
             const tumarIndex = projectsToShow.findIndex(p => p.title === "Tumar.Ai");
             if (tumarIndex !== -1) {
@@ -573,18 +568,10 @@ function generateProjects() {
             }
             projectsToShow.push(newProject);
         });
-        // Четвёртая карточка с ulanude.png
-        projectsToShow.push({
-            title: "Улан-Удэ",
-            description: "Мобильное приложение",
-            tech: ["Figma", "Adobe Illustrator", "Adobe Photoshop"],
-            image: "images/ulanude.png",
-            date: "01.01.2025",
-            liveUrl: "#",
-            pdfUrl: "documents/ulanUde.pdf",
-            codeUrl: "https://github.com/AbiybillaevKhanbolot",
-            gradient: "from-[#C10801] to-[#F16001]"
-        });
+        const ulanProject = projectsData.find(p => p.title === "Улан-Удэ");
+        if (ulanProject) {
+            projectsToShow.push({ ...ulanProject });
+        }
     }
     
     // Компактный размер карточек на главной и на странице «Все проекты»
@@ -601,7 +588,8 @@ function generateProjects() {
         "Real Estate Portal": "project-realestate.html",
         "ИС мероприятия": "project-is-meropriyatiya.html",
         "Улан-Удэ": "project-ulan-ude.html",
-        "We are sysadmins": "project-bilet-5.html"
+        "We are sysadmins": "project-bilet-5.html",
+        "Stick Hero": "project-stick-hero.html"
     };
 
     projectsGrid.innerHTML = projectsToShow.map((project, index) => {
@@ -651,14 +639,12 @@ function generateProjects() {
             const projectTitle = this.getAttribute('data-project-title');
             openPdfModal(pdfUrl, projectTitle);
         });
-
-    // Обработчики для кнопок «Подробнее»
+    });
     document.querySelectorAll('.project-details-btn').forEach(button => {
         button.addEventListener('click', () => {
             const title = button.getAttribute('data-project-title');
             openProjectModal(title);
         });
-    });
     });
 }
 
