@@ -593,17 +593,39 @@ function generateProjects() {
     };
 
     projectsGrid.innerHTML = projectsToShow.map((project, index) => {
-        // Используем кнопку с модальным окном, если у проекта есть pdfUrl
         const hasPdf = project.pdfUrl;
-        const liveDemoButton = hasPdf 
-            ? `<button class="project-link primary" data-pdf-url="${project.pdfUrl}" data-project-title="${project.title}">
+        const liveUrlValid = project.liveUrl && /^https?:\/\//.test(project.liveUrl);
+
+        // На странице «Все проекты»: с pdfUrl — как на главной (кнопка + модалка PDF), не переход по liveUrl
+        let liveDemoButton;
+        if (isProjectsPage && hasPdf) {
+            liveDemoButton = `<button type="button" class="project-link primary" data-pdf-url="${project.pdfUrl}" data-project-title="${project.title}">
                 <i class="fas fa-external-link-alt"></i>
                 Live Demo
-            </button>`
-            : `<a href="${project.liveUrl}" class="project-link primary" target="_blank">
+            </button>`;
+        } else if (isProjectsPage) {
+            if (liveUrlValid) {
+                liveDemoButton = `<a href="${project.liveUrl}" class="project-link primary" target="_blank" rel="noopener">
                 <i class="fas fa-external-link-alt"></i>
                 Live Demo
             </a>`;
+            } else {
+                liveDemoButton = `<a href="${project.liveUrl || '#'}" class="project-link primary" target="_blank" rel="noopener">
+                <i class="fas fa-external-link-alt"></i>
+                Live Demo
+            </a>`;
+            }
+        } else if (hasPdf) {
+            liveDemoButton = `<button class="project-link primary" data-pdf-url="${project.pdfUrl}" data-project-title="${project.title}">
+                <i class="fas fa-external-link-alt"></i>
+                Live Demo
+            </button>`;
+        } else {
+            liveDemoButton = `<a href="${project.liveUrl}" class="project-link primary" target="_blank" rel="noopener">
+                <i class="fas fa-external-link-alt"></i>
+                Live Demo
+            </a>`;
+        }
         
         const year = project.date ? project.date.slice(-4) : "";
         const detailHref = detailPages[project.title] || `project-detail.html?project=${encodeURIComponent(project.title)}`;

@@ -78,6 +78,25 @@
     <div id="toast" class="toast"></div>
     <div class="noise-overlay"></div>
 
+    <!-- Модальное окно для PDF (как на главной: Live Demo для ИС, Улан-Удэ и т.п.) -->
+    <div id="pdfModal" class="pdf-modal">
+        <div class="pdf-modal-content">
+            <div class="pdf-modal-header">
+                <h3 id="pdfModalTitle">Просмотр документа</h3>
+                <button class="pdf-modal-close" id="pdfModalClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div id="pdfModalWarning" class="pdf-modal-warning" style="display: none;">
+                <i class="fas fa-exclamation-triangle"></i>
+                <span>Данный проект является коммерческим и защищен авторским правом. Материалы представлены исключительно в портфолио и не подлежат копированию или распространению.</span>
+            </div>
+            <div class="pdf-modal-body">
+                <iframe id="pdfViewer" src="" frameborder="0"></iframe>
+            </div>
+        </div>
+    </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="config.js"></script>
     <script src="script.js"></script>
